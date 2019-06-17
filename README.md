@@ -1,1 +1,1 @@
-# Hackatraz-Client
+# QLS-Client
