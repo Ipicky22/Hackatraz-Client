@@ -19,7 +19,7 @@ const AppNavigator = createStackNavigator({
     }
 },
     {
-        initialRouteName: 'Register',
+        initialRouteName: 'Login',
         headerMode: 'float',
     });
 
