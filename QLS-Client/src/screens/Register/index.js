@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Text } from 'react-native'
 import { vmin } from 'react-native-expo-viewport-units';
 import { TextInput, Button } from 'react-native-paper';
+import ENV from '../../../env';
+import Func from '../../functions';
 
-export default function Register(props) { 
+export default function Register(props) {
 
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
@@ -12,13 +14,24 @@ export default function Register(props) {
     const [passwordConfirm, setPasswordConfirm] = useState("")
     const [loading, setLoading] = useState(false)
 
-    onRegister = () => {
+    onRegister = async () => {
 
         if (firstname != "" && lastname != "" && email != "" && password != "" && passwordConfirm != "") {
             if (password == passwordConfirm) {
-                if (nickname.length > 5 && password.length > 7) {
+                if (password.length > 7) {
 
+                    const url = ENV.HEROKU_API_URL_REGISTER;
+                    const body = JSON.stringify({
+                        firstname,
+                        lastname,
+                        email,
+                        password,
+                        passwordConfirm
+                    });
                     setLoading(true)
+                    const response = await Func.fetch(url, "POST", body);
+                    setLoading(false)
+                    props.navigation.navigate('Home')
                 }
             }
         }
@@ -80,7 +93,7 @@ export default function Register(props) {
                     Register
                 </Button>
 
-                <TouchableOpacity onPress={this.onLogin} style={{ padding: 2, alignItems: "center"}}>
+                <TouchableOpacity onPress={this.onLogin} style={{ padding: 2, alignItems: "center" }}>
                     <Text>Already have an account ?</Text>
                 </TouchableOpacity>
             </View>
