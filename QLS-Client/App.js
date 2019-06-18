@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import AppNavigator from './src/navigation'
 
 export default function App() {
 
-  const [ title, setTitle ] =  useState("Hello World")
   return (
-    <View style={styles.container}>
-      <Text>{title}</Text>
-    </View>
+
+    <AppNavigator />
+
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
