@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
-import styles from "../../styles/Login/login";
 import { Title, TextInput, Button } from "react-native-paper";
-export default function Login() {
+
+import styles from "../../styles/Login/login";
+
+export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  onRegister = () => {
+    props.navigation.navigate("Register");
+  };
   return (
     <View style={{ flex: 1, backgroundColor: "#a9daa9" }}>
       <View
@@ -19,7 +25,7 @@ export default function Login() {
         <TextInput
           label="Email"
           value={email}
-            type= "e mail"
+          type="email"
           theme={{ colors: { primary: "#d03030" } }}
           style={styles.default}
           mode="outlined"
@@ -37,7 +43,7 @@ export default function Login() {
         <Button
           mode="outlined"
           style={styles.button}
-          disabled= {true}
+          disabled={true}
           theme={{ colors: { primary: "#d03030" } }}
           onPress={() => console.log("Pressed")}
         >
@@ -50,7 +56,7 @@ export default function Login() {
           x
           theme={{ colors: { primary: "#d03030" } }}
           style={styles.button}
-          onPress={() => console.log("Pressed")}
+          onPress={this.onRegister}
         >
           Register
         </Button>
