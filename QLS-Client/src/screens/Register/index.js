@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
-import { View, Image } from 'react-native'
+import { View, Image, TouchableOpacity, Text } from 'react-native'
 import { vmin } from 'react-native-expo-viewport-units';
 import { TextInput, Button } from 'react-native-paper';
+import { withNavigation } from 'react-navigation';
 
-
-export default function Register() {
+const Register = (props) => { 
 
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [passwordConfirm, setPasswordConfirm] = useState("")
+    const [loading, setLoading] = useState(false)
+
+    onRegister = () => {
+
+        if (firstname != "" && lastname != "" && email != "" && password != "" && passwordConfirm != "") {
+            if (password == passwordConfirm) {
+                if (nickname.length > 5 && password.length > 7) {
+
+                    setLoading(true)
+                }
+            }
+        }
+    }
+
+    onLogin = () => {
+        props.navigation.navigate('Login')
+    }
 
     return (
 
         <View style={{ flex: 1, backgroundColor: "#a9daa9" }}>
             <Image style={{ width: vmin(45), height: vmin(37), alignSelf: 'center', marginTop: 56 }} source={require('../../../assets/logo.png')} />
-            <View style={{ flex: 1, justifyContent: "center", width: "80%", alignSelf: "center" }}>
+            <View style={{ flex: 1, justifyContent: "center", width: "70%", alignSelf: "center" }}>
                 <TextInput
                     mode="outlined"
                     label='Firstname'
@@ -60,11 +77,17 @@ export default function Register() {
                     style={{ backgroundColor: "#a9daa9", marginBottom: 20, height: 50 }}
                     secureTextEntry={true}
                 />
-                <Button color="white" mode="outlined" style={{ backgroundColor: "#212720" }} onPress={() => console.log('Pressed')}>
+                <Button loading={loading ? true : false} color="white" mode="outlined" style={{ backgroundColor: "#212720" }} onPress={this.onRegister}>
                     Register
                 </Button>
+
+                <TouchableOpacity onPress={this.onLogin} style={{ padding: 2, alignItems: "center"}}>
+                    <Text>Already have an account ?</Text>
+                </TouchableOpacity>
             </View>
         </View>
 
     );
 }
+
+export default withNavigation(Register)
