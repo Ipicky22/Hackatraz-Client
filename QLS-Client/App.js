@@ -1,15 +1,26 @@
 import React from 'react';
 import AppNavigator from './src/navigation'
-import { Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 export default function App() {
 
-  return (
-    
-    <PaperProvider>
-      <AppNavigator />
-    </PaperProvider>
+  const theme = {
+    ...DefaultTheme,
+    fonts: {
+      regular: 'Roboto',
+      medium: 'Roboto',
+      light: 'Roboto Light',
+      thin: 'Roboto Thin',
+    },
+  }
 
-  );
+    return (
+
+      <PaperProvider theme={theme}>
+        <AppNavigator />
+      </PaperProvider>
+
+    )
+  
 }
 
