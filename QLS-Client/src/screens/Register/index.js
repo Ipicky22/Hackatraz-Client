@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Text } from 'react-native'
 import { vmin } from 'react-native-expo-viewport-units';
 import { TextInput, Button } from 'react-native-paper';
-import { withNavigation } from 'react-navigation';
 
-const Register = (props) => { 
+export default function Register(props) { 
 
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
@@ -89,5 +88,3 @@ const Register = (props) => {
 
     );
 }
-
-export default withNavigation(Register)
