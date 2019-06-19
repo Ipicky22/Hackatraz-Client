@@ -21,5 +21,15 @@ export default Func = {
         } catch (errors) {
             throw errors;
         }
+    },
+    setAsyncStorage: async function(email, password, token) {
+        try {
+            await AsyncStorage.setItem('email', email);
+            await AsyncStorage.setItem('password', password);
+            await AsyncStorage.setItem('token', token);
+        } catch (error) {
+            throw error
+        }
     }
 }
+
