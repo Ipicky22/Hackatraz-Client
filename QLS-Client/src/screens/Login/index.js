@@ -26,7 +26,6 @@ export default function Login(props) {
     if (email != "" && password != "") {
       setLoading(true)
       const response = await Func.fetch(url, "POST", body);
-      console.log(response)
       if (response.status == 400) {
         setLoading(false)
       } else {
