@@ -13,7 +13,7 @@ export default function Login(props) {
 
   storeData = async (email, password, token) => {
     await Func.setAsyncStorage(email, password, token)
-}
+  }
 
   onRegister = () => {
     props.navigation.navigate('Register')
