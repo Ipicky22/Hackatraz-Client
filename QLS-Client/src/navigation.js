@@ -1,33 +1,62 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
+// import { createDrawerNavigator, createAppContainer } from "react-navigation";
+
+// import Login from './screens/Login'
+// import Register from './screens/Register'
+// import Home from './screens/Home'
+
+// const AppNavigator = createDrawerNavigator({
+
+//     Login: {
+//         screen: Login,
+//         // navigationOptions: {
+//         //     header: null
+//         // }
+//     },
+//     Register: {
+//         screen: Register,
+//         // navigationOptions: {
+//         //     header: null
+//         // }
+//     },
+//     Home: {
+//         screen: Home,
+//     }
+// },
+// {
+//     drawerWidth: 300,
+//     drawerPosition: 'left',
+//     initialRouteName: 'Home',
+// });
+
+// export default createAppContainer(AppNavigator);
+
+
+import React from "react"
+import { Platform, Dimensions } from "react-native"
+import { createDrawerNavigator, createAppContainer } from "react-navigation"
 
 import Login from './screens/Login'
 import Register from './screens/Register'
 import Home from './screens/Home'
 
-const AppNavigator = createStackNavigator({
+const WIDTH = Dimensions.get("window").width
 
-    Login: {
-        screen: Login,
-        navigationOptions: {
-            header: null
-        }
+const DrawerConfig = {
+    drawerWidth: WIDTH * 0.83,
+
+}
+
+const AppNavigator = createDrawerNavigator({
+    Home: { 
+        screen: Home 
     },
-    Register: {
-        screen: Register,
-        navigationOptions: {
-            header: null
-        }
+    Login: { 
+        screen: Login 
     },
-    Home: {
-        screen: Home,
-        navigationOptions: {
-            header: null
-        }
+    Register: { 
+        screen: Register 
     }
 },
-    {
-        initialRouteName: 'Login',
-        headerMode: 'float',
-    });
+    DrawerConfig)
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(AppNavigator)
