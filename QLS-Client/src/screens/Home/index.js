@@ -13,10 +13,10 @@ export default function Home(props) {
             </View>
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center", marginTop: -100 }}>
                 <View style={{ backgroundColor: "#a9daa9", height: "20%", width: "80%", justifyContent: "center", alignItems: "center", marginVertical: 25, borderRadius: 20, shadowColor: "#000", shadowOffset: { width: 0, height: 12 }, shadowOpacity: 0.58, shadowRadius: 16.00, elevation: 24 }}>
-                    <Text>Entreprenariat</Text>
+                    <Text style={{ fontSize: 16, fontWeight:"400" }}>Entreprenariat</Text>
                 </View>
                 <View style={{ backgroundColor: "#f3504A", height: "20%", width: "80%", justifyContent: "center", alignItems: "center", marginVertical: 25, borderRadius: 20, shadowColor: "#000", shadowOffset: { width: 0, height: 12 }, shadowOpacity: 0.58, shadowRadius: 16.00, elevation: 24 }}>
-                    <Text>Culture</Text>
+                    <Text style={{ fontSize: 16, fontWeight:"400" }}>Culture</Text>
                 </View>
             </View>
         </View>
