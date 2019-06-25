@@ -1,7 +1,6 @@
 import React from "react"
 import { View } from "react-native"
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { setRecoveryProps } from "expo/build/ErrorRecovery/ErrorRecovery";
 
 export default function MenuButton(props) { 
 
