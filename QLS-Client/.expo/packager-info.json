@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19004,
-  "packagerPid": 98521,
+  "packagerPort": 19001,
+  "packagerPid": 62421,
   "expoServerNgrokUrl": "https://j9-8h2.awizel.qls-client.exp.direct",
   "packagerNgrokUrl": "https://packager.j9-8h2.awizel.qls-client.exp.direct",
-  "ngrokPid": 98555
+  "ngrokPid": 62441
 }
