@@ -49,6 +49,9 @@ const DrawerConfig = {
 }
 
 const AppNavigator = createDrawerNavigator({
+    Entreprenariat: { 
+        screen: Entreprenariat 
+    },
     Home: { 
         screen: Home 
     },
@@ -57,9 +60,6 @@ const AppNavigator = createDrawerNavigator({
     },
     Register: { 
         screen: Register 
-    },
-    Entreprenariat: { 
-        screen: Entreprenariat 
     },
     Culture: { 
         screen: Culture 
