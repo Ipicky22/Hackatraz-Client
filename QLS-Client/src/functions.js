@@ -41,8 +41,7 @@ export default (Func = {
         }
       );
       const json = await response.json();
-      // console.log(json.videos);
-      return json.videos;
+      return json;
     } catch (errors) {
       console.log(errors.messages);
       throw errors;

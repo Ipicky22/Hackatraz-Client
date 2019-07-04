@@ -1,8 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { View, Text ,FlatList} from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { Button, DataTable } from "react-native-paper";
 import MenuButton from "../../components/MenuButton";
 import functions from "../../functions";
+
+export default function Entreprenariat(props) {
+  const [datas, setData] = useState({ videos: [] });
+  async function fetch() {
+    const store = await functions.fetchByCategory("entrepreneuriat");
+    await setData(store);
+  }
+  // fetch datas in videos
+  useEffect(() => {
+    fetch();
+    console.log(datas.videos);
+  }, fetch());
+  return (
+    <View style={{ flex: 1 , margin: 12}}>
+      <MenuButton navigation={props.navigation} />
+      <Text>Category</Text>
+      <FlatList
+        data={datas.videos.videos}
+        renderItem={({ item }) => {
+         // console.log(item)
+          const { id } = item;
+          return <Text> 1 {id}</Text>;
+        }}
+      />
+    </View>
+  );
+}
 
 // export default class Entreprenariat extends React.Component {
 
@@ -55,28 +82,3 @@ import functions from "../../functions";
 //         )
 //     }
 // }
-
-export default function Entreprenariat(props) {
-  const [datas, setData] = useState({ videos: [] });
-  async function fetch() {
-    const store = await functions.fetchByCategory("entrepreneuriat");
-    console.log(store);
-    setData(store);
-  }
-  useEffect(() => {
-    fetch();
-  }, fetch);
-  return (
-    <View style={{ flex: 1 }}>
-      <MenuButton navigation={props.navigation} />
-      <FlatList
-        data={datas.videos}
-        renderItem={
-          (items) => {
-            <Text> {items.id}</Text>
-          }
-        }
-      />
-    </View>
-  );
-}
