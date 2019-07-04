@@ -6,27 +6,37 @@ import functions from "../../functions";
 
 export default function Entreprenariat(props) {
   const [datas, setData] = useState({ videos: [] });
+  const [isLoading, setIsLoading] = useState(false);
+
   async function fetch() {
     const store = await functions.fetchByCategory("entrepreneuriat");
-    await setData(store);
+    setData(store);
   }
   // fetch datas in videos
   useEffect(() => {
+    setIsLoading(true);
     fetch();
-    console.log(datas.videos);
-  }, fetch());
+    setIsLoading(false);
+    console.log(datas);
+  }, [fetch()]);
   return (
-    <View style={{ flex: 1 , margin: 12}}>
+    <View style={{ flex: 1, margin: 12 }}>
       <MenuButton navigation={props.navigation} />
       <Text>Category</Text>
-      <FlatList
-        data={datas.videos.videos}
-        renderItem={({ item }) => {
-         // console.log(item)
-          const { id } = item;
-          return <Text> 1 {id}</Text>;
-        }}
-      />
+      {isLoading ? (
+        <Text>Loading ... </Text>
+      ) : (
+        <FlatList
+          data={datas.videos}
+          renderItem={({ item }) => {
+            // console.log(item)
+            const { id } = item;
+            return (
+            <Text> 1 </Text>
+            );
+          }}
+        />
+      )}
     </View>
   );
 }

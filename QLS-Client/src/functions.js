@@ -40,8 +40,8 @@ export default (Func = {
           }
         }
       );
-      const json = await response.json();
-      return json;
+      const responseJson = await response.json();
+      return responseJson.videos;
     } catch (errors) {
       console.log(errors.messages);
       throw errors;
