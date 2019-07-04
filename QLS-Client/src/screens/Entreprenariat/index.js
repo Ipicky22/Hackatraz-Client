@@ -1,29 +1,92 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, FlatList } from "react-native";
-import { Button, DataTable } from "react-native-paper";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { Button, DataTable, Card } from "react-native-paper";
 import MenuButton from "../../components/MenuButton";
 import functions from "../../functions";
 
 export default function Entreprenariat(props) {
-  const [datas, setData] = useState({ videos: [] });
+  const [datas, setData] = useState({
+    videos: [
+      {
+        id: 1,
+        url: "https://www.youtube.com/watch?v=jVJovoj634c",
+        title: "Le pianiste du rap français",
+        guests: ["Sofiane Pamart"],
+        tags: ["musique", "rap"],
+        points: 15
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/watch?v=GY3hsRoXew8",
+        title: "La reine des biscuits personnalisés",
+        guests: ["Shanty Baehrel"],
+        tags: ["biscuits"],
+        points: 15
+      },
+      {
+        id: 3,
+        url: "https://www.youtube.com/watch?v=_Yu5H9lnGz4",
+        title: "Le passionné de vidéo qui voyage à travers l'Europe",
+        guests: ["Grégoire Kengen"],
+        tags: ["voyage"],
+        points: 15
+      },
+      {
+        id: 4,
+        url: "https://www.youtube.com/watch?v=WWIzbJn1des",
+        title: "Avoir le courage de ne pas choisir la facilité",
+        guests: ["Guillaume Fourdinier"],
+        tags: ["agriculture", "environnement", "ecologie"],
+        points: 15
+      },
+      {
+        id: 5,
+        url: "https://www.youtube.com/watch?v=af27ge1lZiM",
+        title: "Prendre la parole pour bâtir un futur plus souhaitable",
+        guests: ["Jérôme Ruskin"],
+        tags: ["media", "futur", "ecologie"],
+        points: 15
+      }
+    ]
+  });
   const [isLoading, setIsLoading] = useState(false);
 
-  async function fetch() {
-    const store = await functions.fetchByCategory("entrepreneuriat");
-    setData(store);
-  }
+  // async function fetch() {
+  //   const store = await functions.fetchByCategory("entrepreneuriat");
+  //   setData(store);
+  // }
   // fetch datas in videos
-  useEffect(() => {
-    setIsLoading(true);
-    fetch();
-    setIsLoading(false);
-    console.log(datas);
-  }, [fetch()]);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   //fetch();
+  //   setIsLoading(false);
+  //   console.log(datas);
+  // }, [fetch()]);
   return (
     <View style={{ flex: 1, margin: 12 }}>
       <MenuButton navigation={props.navigation} />
       <Text>Category</Text>
-      {isLoading ? (
+      <FlatList
+        data={datas.videos}
+        renderItem={({ item }) => {
+          const { id, title, url, tags } = item;
+          return (
+            <TouchableOpacity
+              //  onPress={this.onRegister}
+              style={{ padding: 2, alignItems: "center" }}
+            >
+              <Card>
+              <Card.Title title= {title} /> 
+              <Card.Content>
+                {id} {title} {url} {tags}
+              </Card.Content>
+              </Card>
+            </TouchableOpacity>
+          );
+        }}
+      />
+
+      {/* {isLoading ? (
         <Text>Loading ... </Text>
       ) : (
         <FlatList
@@ -31,11 +94,11 @@ export default function Entreprenariat(props) {
           renderItem={({ item }) => {
             const { id } = item;
             return (
-            <Text> 1 </Text>
+            <Text> {id } </Text>
             );
           }}
         />
-      )}
+      )} */}
     </View>
   );
 }
