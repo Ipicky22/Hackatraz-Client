@@ -7,44 +7,43 @@ export default function Culture(props) {
   const [datas, setData] = useState({
     videos: [
       {
-        id: 1,
-        url: "https://www.youtube.com/watch?v=jVJovoj634c",
-        title: "Le pianiste du rap français",
-        guests: ["Sofiane Pamart"],
-        tags: ["musique", "rap"],
+        id: 6,
+        url: "https://www.youtube.com/watch?v=GxldQpFTlrQ",
+        title: "Le français le plus lu au monde ",
+        guests: ["Marc Levy"],
+        tags: ["écriture"],
         points: 15
       },
       {
-        id: 2,
-        url: "https://www.youtube.com/watch?v=GY3hsRoXew8",
-        title: "La reine des biscuits personnalisés",
-        guests: ["Shanty Baehrel"],
-        tags: ["biscuits"],
+        id: 7,
+        url: "https://www.youtube.com/watch?v=Lkh21Tx6sQw",
+        title: "Woman of the moon",
+        guests: ["Fatoumata Kebe "],
+        tags: ["astronomie", "science", "lune"],
         points: 15
       },
       {
-        id: 3,
-        url: "https://www.youtube.com/watch?v=_Yu5H9lnGz4",
-        title: "Le passionné de vidéo qui voyage à travers l'Europe",
-        guests: ["Grégoire Kengen"],
-        tags: ["voyage"],
+        id: 8,
+        url: "https://www.youtube.com/watch?v=UJDFGCjKO4M",
+        title: "Un nobel face aux climatosceptiques",
+        guests: ["Jean Jouzel"],
+        tags: ["climat"],
         points: 15
       },
       {
-        id: 4,
-        url: "https://www.youtube.com/watch?v=WWIzbJn1des",
-        title: "Avoir le courage de ne pas choisir la facilité",
-        guests: ["Guillaume Fourdinier"],
-        tags: ["agriculture", "environnement", "ecologie"],
+        id: 9,
+        url: "https://www.youtube.com/watch?v=pPCr1MOjZXI",
+        title: "Toujours résistant ",
+        guests: ["Edgar Morin", "François Cluzet"],
+        tags: ["resistance", "sociologie", "philosophie"],
         points: 15
       },
       {
-        id: 5,
-        url: "https://www.youtube.com/watch?v=af27ge1lZiM",
-        title: "Prendre la parole pour bâtir un futur plus souhaitable",
-        guests: ["Jérôme Ruskin"],
-        tags: ["media", "futur", "ecologie"],
-        points: 15
+        id: 10,
+        url: "https://www.youtube.com/watch?v=Kn4ROtw3tyM",
+        title: "Boxe avec le destin",
+        guests: ["Sarah Ourahmoune"],
+        tags: ["sport", "boxe"]
       }
     ]
   });
