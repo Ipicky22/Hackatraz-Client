@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import { Button, DataTable, Card } from "react-native-paper";
+import { Button, Paragraph, Title, DataTable, Card } from "react-native-paper";
 import MenuButton from "../../components/MenuButton";
-import functions from "../../functions";
 
 export default function Entreprenariat(props) {
   const [datas, setData] = useState({
@@ -63,23 +62,27 @@ export default function Entreprenariat(props) {
   //   console.log(datas);
   // }, [fetch()]);
   return (
-    <View style={{ flex: 1, margin: 12 }}>
+    <View style={{ flex: 1 }}>
       <MenuButton navigation={props.navigation} />
-      <Text>Category</Text>
+      <Title> Entreprenariat </Title>
       <FlatList
         data={datas.videos}
-        renderItem={({ item }) => {
+        renderItem={({ item, index }) => {
           const { id, title, url, tags } = item;
           return (
             <TouchableOpacity
               //  onPress={this.onRegister}
-              style={{ padding: 2, alignItems: "center" }}
+              style={{ mardin: 0 }}
             >
-              <Card>
-              <Card.Title title= {title} /> 
-              <Card.Content>
-                {id} {title} {url} {tags}
-              </Card.Content>
+              <Card key={index}>
+                <Card.Content>
+                  <Text style={{ fontWeight: "bold", alignItems:"center" }} >Title : {title}</Text>
+                  <Paragraph>Url: {url}</Paragraph>
+                  <Text style={{ fontWeight: "bold" }}>Tags:</Text>
+                  {tags.map(item => (
+                    <Text right>{item}</Text>
+                  ))}
+                </Card.Content>
               </Card>
             </TouchableOpacity>
           );

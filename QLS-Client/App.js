@@ -6,12 +6,12 @@ export default function App() {
   
   const theme = {
     ...DefaultTheme,
-    fonts: {
-      regular: "Roboto",
-      medium: "Roboto",
-      light: "Roboto Light",
-      thin: "Roboto Thin"
-    }
+    // fonts: {
+    //   regular: "Roboto",
+    //   medium: "Roboto",
+    //   light: "Roboto Light",
+    //   thin: "Roboto Thin"
+    // }
   };
   return (
     <PaperProvider theme={theme}>
