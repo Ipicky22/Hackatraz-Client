@@ -29,7 +29,6 @@ export default function Entreprenariat(props) {
         <FlatList
           data={datas.videos}
           renderItem={({ item }) => {
-            // console.log(item)
             const { id } = item;
             return (
             <Text> 1 </Text>
