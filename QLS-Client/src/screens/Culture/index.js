@@ -48,7 +48,9 @@ export default function Culture(props) {
     ]
   });
   const [isLoading, setIsLoading] = useState(false);
-
+  goToVideo = () => {
+    props.navigation.navigate("Video");
+  };
   // async function fetch() {
   //   const store = await functions.fetchByCategory("culture");
   //   setData(store);
