@@ -72,7 +72,7 @@ export default function Culture(props) {
           const { id, title, url, tags } = item;
           return (
             <TouchableOpacity
-              //  onPress={this.onRegister}
+              onPress={console.log("hello")}
               style={{ mardin: 0 }}
             >
               <Card key={index}>
