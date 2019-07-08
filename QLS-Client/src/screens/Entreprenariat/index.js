@@ -50,6 +50,9 @@ export default function Entreprenariat(props) {
   });
   const [isLoading, setIsLoading] = useState(false);
 
+  onVideos = () => {
+    props.navigation.navigate('Videos')
+}
   // async function fetch() {
   //   const store = await functions.fetchByCategory("entrepreneuriat");
   //   setData(store);
@@ -64,20 +67,19 @@ export default function Entreprenariat(props) {
   return (
     <View style={{ flex: 1 }}>
       <MenuButton navigation={props.navigation} />
-      <Title> Entreprenariat </Title>
+      <Title style={{ alignSelf: "center"}}> Entreprenariat </Title>
       <FlatList
         data={datas.videos}
         renderItem={({ item, index }) => {
           const { id, title, url, tags } = item;
           return (
             <TouchableOpacity
-                onPress={console.log("hello")}
+                onPress={this.onVideos}
               style={{ mardin: 0 }}
             >
-              <Card key={index}>
+              <Card key={index} style={{ backgroundColor: "#a9daa9", marginVertical: 2}}>
                 <Card.Content>
                   <Text style={{ fontWeight: "bold", alignItems:"center" }} >Title : {title}</Text>
-                  <Paragraph>Url: {url}</Paragraph>
                   <Text style={{ fontWeight: "bold" }}>Tags:</Text>
                   {tags.map(item => (
                     <Text right>{item}</Text>

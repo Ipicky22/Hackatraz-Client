@@ -19,8 +19,11 @@ export default function Videos(props) {
                 />
         </SafeAreaView>
         <TouchableOpacity activeOpacity={0} title="Press" onPress={this._showDialog} color="#ffff"><Text> </Text></TouchableOpacity>
-        <View style={{ flex:1}}>
-            <Text>Description</Text>
+        <View style={{ flex:1, backgroundColor:"#fff", marginHorizontal: 16}}>
+            <Text style={{ fontWeight: "600"}}>Le passionné de vidéo qui voyage à travers l'Europe</Text>
+            <Text>de Grégoire Kengen</Text>
+            <Text>Tags : Voyage</Text>
+            <Text>15 Points</Text>
         </View>
 
         <Dialog
@@ -28,10 +31,10 @@ export default function Videos(props) {
                 onDismiss={this._hideDialog}
                 style={{ zIndex: 4}}>
             <Dialog.Content>
-                <Paragraph>Vous avez gagner </Paragraph>
+                <Paragraph>Vous avez gagner 15 points avec le tag "Voyage" 🙈🙉🙊</Paragraph>
             </Dialog.Content>
             <Dialog.Actions>
-                <TouchableOpacity onPress={this._hideDialog} ><Text>Done</Text></TouchableOpacity>
+                <TouchableOpacity onPress={this._hideDialog} ><Text>OK</Text></TouchableOpacity>
             </Dialog.Actions>
         </Dialog>
         </>

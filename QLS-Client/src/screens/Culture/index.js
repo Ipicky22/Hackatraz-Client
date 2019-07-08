@@ -65,7 +65,7 @@ export default function Culture(props) {
   return (
     <View style={{ flex: 1 }}>
       <MenuButton navigation={props.navigation} />
-      <Title> Culture </Title>
+      <Title style={{ alignSelf: "center"}}> Culture </Title>
       <FlatList
         data={datas.videos}
         renderItem={({ item, index }) => {
@@ -75,7 +75,7 @@ export default function Culture(props) {
               onPress={console.log("hello")}
               style={{ mardin: 0 }}
             >
-              <Card key={index}>
+              <Card key={index} key={index} style={{ backgroundColor: "#f3504A", marginVertical: 2}}>
                 <Card.Content>
                   <Text style={{ fontWeight: "bold", alignItems: "center" }}>
                     Title : {title}

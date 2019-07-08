@@ -50,17 +50,17 @@ const DrawerConfig = {
 }
 
 const AppNavigator = createDrawerNavigator({
-    Videos: {
-        screen: Videos
+    Login: { 
+        screen: Login 
     },
     Entreprenariat: { 
         screen: Entreprenariat 
     },
+    Videos: {
+        screen: Videos
+    },
     Home: { 
         screen: Home 
-    },
-    Login: { 
-        screen: Login 
     },
     Register: { 
         screen: Register 
