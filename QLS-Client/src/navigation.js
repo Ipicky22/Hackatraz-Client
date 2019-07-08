@@ -38,6 +38,8 @@ import { createDrawerNavigator, createAppContainer } from "react-navigation"
 import Login from './screens/Login'
 import Register from './screens/Register'
 import Home from './screens/Home'
+import Entreprenariat from './screens/Entreprenariat'
+import Culture from './screens/Culture'
 
 const WIDTH = Dimensions.get("window").width
 
@@ -47,6 +49,9 @@ const DrawerConfig = {
 }
 
 const AppNavigator = createDrawerNavigator({
+    Entreprenariat: { 
+        screen: Entreprenariat 
+    },
     Home: { 
         screen: Home 
     },
@@ -55,6 +60,9 @@ const AppNavigator = createDrawerNavigator({
     },
     Register: { 
         screen: Register 
+    },
+    Culture: { 
+        screen: Culture 
     }
 },
     DrawerConfig)
