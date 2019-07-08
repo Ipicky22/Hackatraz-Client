@@ -40,6 +40,7 @@ import Register from './screens/Register'
 import Home from './screens/Home'
 import Entreprenariat from './screens/Entreprenariat'
 import Culture from './screens/Culture'
+import Videos from './screens/Videos'
 
 const WIDTH = Dimensions.get("window").width
 
@@ -49,6 +50,9 @@ const DrawerConfig = {
 }
 
 const AppNavigator = createDrawerNavigator({
+    Videos: {
+        screen: Videos
+    },
     Entreprenariat: { 
         screen: Entreprenariat 
     },
