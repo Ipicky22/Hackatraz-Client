@@ -21,23 +21,22 @@ export default function Login(props) {
 
   onLogin = async () => {
 
-    props.navigation.navigate('Home')
-    // const url = ENV.HEROKU_API_URL_LOGIN
-    // const body = JSON.stringify({ email, password })
-    // if (email != "" && password != "") {
-    //   setLoading(true)
-    //   const response = await Func.fetch(url, "POST", body);
-    //   if (response.status == 400) {
-    //     setLoading(false)
-    //   } else {
-    //     const responseJSON = await response.json()
-    //     console.log(responseJSON)
-    //     await this.storeData(email, password, responseJSON.meta.token)
-    //     props.navigation.navigate('Home')
-    //   }
-    // } else {
-    //   setLoading(false)
-    // }
+    const url = ENV.HEROKU_API_URL_LOGIN
+    const body = JSON.stringify({ email, password })
+    if (email != "" && password != "") {
+      setLoading(true)
+      const response = await Func.fetch(url, "POST", body);
+      if (response.status == 400) {
+        setLoading(false)
+      } else {
+        const responseJSON = await response.json()
+        console.log(responseJSON)
+        await this.storeData(email, password, responseJSON.meta.token)
+        props.navigation.navigate('Home')
+      }
+    } else {
+      setLoading(false)
+    }
   }
 
   return (

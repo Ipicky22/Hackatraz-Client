@@ -11,7 +11,7 @@ export default function Entreprenariat(props) {
         url: "https://www.youtube.com/watch?v=jVJovoj634c",
         title: "Le pianiste du rap français",
         guests: ["Sofiane Pamart"],
-        tags: ["musique", "rap"],
+        tags: ["Musique", "Rap"],
         points: 15
       },
       {
@@ -19,7 +19,7 @@ export default function Entreprenariat(props) {
         url: "https://www.youtube.com/watch?v=GY3hsRoXew8",
         title: "La reine des biscuits personnalisés",
         guests: ["Shanty Baehrel"],
-        tags: ["biscuits"],
+        tags: ["Biscuits"],
         points: 15
       },
       {
@@ -27,7 +27,7 @@ export default function Entreprenariat(props) {
         url: "https://www.youtube.com/watch?v=_Yu5H9lnGz4",
         title: "Le passionné de vidéo qui voyage à travers l'Europe",
         guests: ["Grégoire Kengen"],
-        tags: ["voyage"],
+        tags: ["Voyage"],
         points: 15
       },
       {
@@ -35,7 +35,7 @@ export default function Entreprenariat(props) {
         url: "https://www.youtube.com/watch?v=WWIzbJn1des",
         title: "Avoir le courage de ne pas choisir la facilité",
         guests: ["Guillaume Fourdinier"],
-        tags: ["agriculture", "environnement", "ecologie"],
+        tags: ["Agriculture", "Environnement", "Ecologie"],
         points: 15
       },
       {
@@ -43,7 +43,7 @@ export default function Entreprenariat(props) {
         url: "https://www.youtube.com/watch?v=af27ge1lZiM",
         title: "Prendre la parole pour bâtir un futur plus souhaitable",
         guests: ["Jérôme Ruskin"],
-        tags: ["media", "futur", "ecologie"],
+        tags: ["Media", "Futur", "Ecologie"],
         points: 15
       }
     ]

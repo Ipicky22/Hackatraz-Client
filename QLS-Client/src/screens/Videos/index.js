@@ -22,8 +22,12 @@ export default function Videos(props) {
         <View style={{ flex:1, backgroundColor:"#fff", marginHorizontal: 16}}>
             <Text style={{ fontWeight: "600"}}>Le passionné de vidéo qui voyage à travers l'Europe</Text>
             <Text>de Grégoire Kengen</Text>
-            <Text>Tags : Voyage</Text>
-            <Text>15 Points</Text>
+            <View style={{ borderRadius: 20, backgroundColor:"#a9daa9", marginVertical: 4, marginTop: 4}}>
+                <Text style={{ fontWeight: "700", marginLeft: 8 }}>Tag : Voyage</Text>
+            </View>
+            <View style={{ borderRadius: 20, backgroundColor:"#f3504A", marginVertical: 4}}>
+                <Text style={{ fontWeight: "700", marginLeft: 8 }}>15 Points</Text>
+            </View>
         </View>
 
         <Dialog
@@ -31,7 +35,19 @@ export default function Videos(props) {
                 onDismiss={this._hideDialog}
                 style={{ zIndex: 4}}>
             <Dialog.Content>
-                <Paragraph>Vous avez gagner 15 points avec le tag "Voyage" 🙈🙉🙊</Paragraph>
+                <Paragraph>Vous avez gagné les éléments suivants :</Paragraph>
+                <View style={{ borderRadius: 20, backgroundColor:"#a9daa9", marginVertical: 4, marginTop: 4}}>
+                    <Text style={{ fontWeight: "500", marginLeft: 8 }}>Tag : Voyage</Text>
+                </View>
+                <View style={{ borderRadius: 20, backgroundColor:"#f3504A", marginVertical: 4}}>
+                    <Text style={{ fontWeight: "500", marginLeft: 8 }}>15 Points</Text>
+                </View>
+                <View style={{ borderRadius: 20, backgroundColor:"#FB9C01", marginVertical: 4}}>
+                    <Text style={{ fontWeight: "500", marginLeft: 8 }}>Le niveau suivant est acquis dans 30 points</Text>
+                </View>
+                <View style={{ marginVertical: 4}}>
+                    <Text style={{ textAlign: "center"}}>🙈🙉🙊</Text>
+                </View>
             </Dialog.Content>
             <Dialog.Actions>
                 <TouchableOpacity onPress={this._hideDialog} ><Text>OK</Text></TouchableOpacity>
